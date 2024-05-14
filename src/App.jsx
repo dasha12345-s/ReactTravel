@@ -1,3 +1,4 @@
+import Place from '../Place';
 import savannaImg from './assets/african-savanna.jpg';
 import amazonImg from './assets/amazon-river.jpg';
 import caribbeanImg from './assets/caribbean-beach.jpg';
@@ -74,8 +75,13 @@ function App() {
         </Accordion>
       </section>
       <section>
-        <SearchableList items={PLACES}/>
-        <SearchableList items={['item1', 'item2']}/>
+        <SearchableList items={PLACES}>
+          {(item) => <Place item={item}/> }
+          </SearchableList>
+          <SearchableList items={['1','2']}>
+          {(item) => item}
+          </SearchableList >
+      
       </section>
     </main>
   );
